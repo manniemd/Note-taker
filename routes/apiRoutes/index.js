@@ -6,6 +6,7 @@ const { runInNewContext } = require('vm');
 
 router.get('/notes', (req, res) => {
     let data = fs.readFileSync(path.join(__dirname, '../../db/db.json'),'utf-8');
+    data = JSON.parse(data);
     res.json(data);
 });
 
